@@ -34,7 +34,7 @@ public class AgendaManager {
 		
 		
 	//Creating Scanner inFile to read input file
-		Scanner inFile = new Scanner(new File("C:\\Users\\abdul\\Desktop\\test3.txt"));
+		Scanner inFile = new Scanner(new File("C:\\Users\\abdul\\Desktop\\test2.txt"));
 		
 	if (cycle <= 30) {
 		
