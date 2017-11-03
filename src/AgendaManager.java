@@ -27,14 +27,15 @@ public class AgendaManager {
     public static long startTime = System.currentTimeMillis();
     
 	
-	public static void readFile() throws IOException {
+	public static void readFile(String Filename) throws IOException {
 		
 		
 		String lines = "";
 		
 		
 	//Creating Scanner inFile to read input file
-		Scanner inFile = new Scanner(new File("C:\\Users\\abdul\\Desktop\\test2.txt"));
+		
+		Scanner inFile = new Scanner(new File(Filename));
 		
 	if (cycle <= 30) {
 		
@@ -65,6 +66,7 @@ public class AgendaManager {
 					}
 					
 						namesList.add(singleRuleArr[0]);
+					
 						
 					//singleRuleArr[1] = singleRuleArr[1];//.trim();//.substring(0, singleRuleArr[1].length()-0);
 					//System.out.println(singleRuleArr[1]);
@@ -190,16 +192,19 @@ public class AgendaManager {
 	
 	public static void main(String[] args) {
 		
-		
-		
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Enter the Absolute path of the File : ");
+		String Filename = scan.next();
+		scan.close();
 		try {
-			readFile();
+			readFile(Filename);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.out.println("The file is not compatible");
+			System.out.println("File not found");
 			
 		}
+		
 		long endTime = System.currentTimeMillis();
         System.out.println("\nThe running time is " + (endTime - startTime) + " milliseconds");
 
